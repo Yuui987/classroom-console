@@ -737,7 +737,7 @@ const GDrive = {
         this._onToken(resp);
         finish(true);
       };
-      try{ this.tokenClient.requestAccessToken({ prompt:'none' }); }catch(e){
+      try{ this.tokenClient.requestAccessToken({ prompt:'' }); }catch(e){
         this.lastAuthError = { error:'exception', detail:e?.message || String(e) };
         console.error('Google silent login 發生例外：', e);
         finish(false);
